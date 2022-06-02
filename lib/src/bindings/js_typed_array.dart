@@ -1,6 +1,5 @@
 import 'dart:ffi';
 
-import 'package:ffi/ffi.dart';
 import 'package:jsc/src/bindings/dylib.dart';
 import 'package:jsc/src/bindings/js_base.dart';
 
