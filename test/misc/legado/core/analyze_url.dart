@@ -17,7 +17,5 @@ class AnalyzeUrl {
   final BaseSource? source;
   late final Map<String, String>? headerMap;
 
-  Future<void> getStrResponse() async {
-
-  }
+  Future<void> getStrResponse() async {}
 }

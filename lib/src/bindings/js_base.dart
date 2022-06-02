@@ -62,8 +62,10 @@ typedef JSObjectRef = Pointer<OpaqueJSValue>;
 /// [startingLineNumber] An integer value specifying the script's starting line number in the file located at sourceURL. This is only used when reporting exceptions. The value is one-based, so the first line is line 1 and invalid values are clamped to 1.
 /// [exception] A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
 /// [@result] The JSValue that results from evaluating script, or NULL if an exception is thrown.
-final JSValueRef Function(JSContextRef ctx, JSStringRef script, JSObjectRef thisObject, JSStringRef sourceURL, int startingLineNumber, Pointer<JSValueRef> exception) JSEvaluateScript =
-    jscLib.lookup<NativeFunction<JSValueRef Function(JSContextRef ctx, JSStringRef script, JSObjectRef thisObject, JSStringRef sourceURL, Int32 startingLineNumber, Pointer<JSValueRef> exception)>>('JSEvaluateScript').asFunction();
+final JSValueRef Function(JSContextRef ctx, JSStringRef script, JSObjectRef thisObject, JSStringRef sourceURL, int startingLineNumber, Pointer<JSValueRef> exception) JSEvaluateScript = jscLib
+    .lookup<NativeFunction<JSValueRef Function(JSContextRef ctx, JSStringRef script, JSObjectRef thisObject, JSStringRef sourceURL, Int32 startingLineNumber, Pointer<JSValueRef> exception)>>(
+        'JSEvaluateScript')
+    .asFunction();
 
 /// Checks for syntax errors in a string of JavaScript.
 /// [ctx] The execution context to use.
@@ -72,8 +74,9 @@ final JSValueRef Function(JSContextRef ctx, JSStringRef script, JSObjectRef this
 /// [startingLineNumber] An integer value specifying the script's starting line number in the file located at sourceURL. This is only used when reporting exceptions. The value is one-based, so the first line is line 1 and invalid values are clamped to 1.
 /// [exception] A pointer to a JSValueRef in which to store a syntax error exception, if any. Pass NULL if you do not care to store a syntax error exception.
 /// [@result] true if the script is syntactically correct, otherwise false.
-final bool Function(JSContextRef ctx, JSStringRef script, JSStringRef sourceURL, int startingLineNumber, Pointer<JSValueRef> exception) JSCheckScriptSyntax =
-    jscLib.lookup<NativeFunction<Bool Function(JSContextRef ctx, JSStringRef script, JSStringRef sourceURL, Int32 startingLineNumber, Pointer<JSValueRef> exception)>>('JSCheckScriptSyntax').asFunction();
+final bool Function(JSContextRef ctx, JSStringRef script, JSStringRef sourceURL, int startingLineNumber, Pointer<JSValueRef> exception) JSCheckScriptSyntax = jscLib
+    .lookup<NativeFunction<Bool Function(JSContextRef ctx, JSStringRef script, JSStringRef sourceURL, Int32 startingLineNumber, Pointer<JSValueRef> exception)>>('JSCheckScriptSyntax')
+    .asFunction();
 
 /// Performs a JavaScript garbage collection.
 /// [ctx] The execution context to use.

@@ -33,10 +33,7 @@ abstract class BaseSource {
       if (header?.isNotEmpty ?? false)
         ...(json.decode(header!) as Map<String, dynamic>).cast<String, String>().map((String key, String value) {
           if (value.toLowerCase().startsWith('@js:')) {
-
-          } else if (value.toLowerCase().startsWith('<js>')) {
-
-          }
+          } else if (value.toLowerCase().startsWith('<js>')) {}
           return MapEntry<String, String>(key, value);
         }),
     };

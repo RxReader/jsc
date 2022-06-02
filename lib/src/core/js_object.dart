@@ -869,8 +869,7 @@ extension JSObjectExtension on JSObject {
 }
 
 class JSResolve {
-  const JSResolve(Pointer<JSObjectRef> ref)
-      : _ref = ref;
+  const JSResolve(Pointer<JSObjectRef> ref) : _ref = ref;
 
   factory JSResolve.create([JSObject? resolve]) {
     final Pointer<JSValueRef> ref = calloc.call(1);
@@ -894,8 +893,7 @@ extension JSResolveExtension on JSResolve {
 }
 
 class JSReject {
-  const JSReject(Pointer<JSObjectRef> ref)
-      : _ref = ref;
+  const JSReject(Pointer<JSObjectRef> ref) : _ref = ref;
 
   factory JSReject.create([JSObject? reject]) {
     final Pointer<JSValueRef> ref = calloc.call(1);

@@ -175,10 +175,7 @@ void main() {
       final JSStringRef string = JSValueToStringCopy(globalContext, result, nullptr);
       final Pointer<JSChar> characters = JSStringGetCharactersPtr(string);
       final int charactersLength = JSStringGetLength(string);
-      final String dbc = String.fromCharCodes(Uint16List.view(characters
-          .cast<Uint16>()
-          .asTypedList(charactersLength)
-          .buffer, 0, charactersLength));
+      final String dbc = String.fromCharCodes(Uint16List.view(characters.cast<Uint16>().asTypedList(charactersLength).buffer, 0, charactersLength));
       if (kDebugMode) {
         print('dbc: $dbc');
       }
@@ -221,10 +218,7 @@ void main() {
       final JSStringRef string = JSValueCreateJSONString(globalContext, value, 0, nullptr);
       final Pointer<JSChar> characters = JSStringGetCharactersPtr(string);
       final int charactersLength = JSStringGetLength(string);
-      final String result = String.fromCharCodes(Uint16List.view(characters
-          .cast<Uint16>()
-          .asTypedList(charactersLength)
-          .buffer, 0, charactersLength));
+      final String result = String.fromCharCodes(Uint16List.view(characters.cast<Uint16>().asTypedList(charactersLength).buffer, 0, charactersLength));
       if (kDebugMode) {
         print('result: $result');
       }

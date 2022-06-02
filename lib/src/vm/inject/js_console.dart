@@ -14,7 +14,7 @@ class JSConsoleInject extends JSInject {
   final bool enable;
 
   // 不支持 assert/clear/count/countReset/dir/dirxml/group/groupCollapsed/groupEnd/profile/profileEnd/table/time/timeEnd/timeLog/timeStamp
-  static const List<String> _kConsoleMethods = <String>['debug', 'error', 'exception'/*error 方法的别称*/, 'info', 'log', 'trace', 'warn'];
+  static const List<String> _kConsoleMethods = <String>['debug', 'error', 'exception' /*error 方法的别称*/, 'info', 'log', 'trace', 'warn'];
 
   @override
   void injectJS(JSGlobalContext globalContext, String vmId) {

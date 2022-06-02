@@ -65,7 +65,7 @@ class JSIntervalInject extends JSInject {
         if (JSVmInject.hasVmId(context)) {
           if (name == 'setInterval') {
             final JSValue codeOrFunc = arguments[0];
-            final int milliseconds = math.max(arguments[1].number.toInt(), 10);//至少10毫秒
+            final int milliseconds = math.max(arguments[1].number.toInt(), 10); //至少10毫秒
             final List<JSValue> params = arguments.sublist(2);
             final int intervalId = JSIntervalManager.instance.setInterval(JSVmInject.getVmId(context), () {
               codeOrFunc.object.callAsFunction(arguments: params);

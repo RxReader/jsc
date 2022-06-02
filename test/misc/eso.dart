@@ -1,12 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  setUp(() {
-  });
+  setUp(() {});
 
-  tearDown(() {
-  });
+  tearDown(() {});
 
-  test('ESO', () {
-  });
+  test('ESO', () {});
 }

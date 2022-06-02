@@ -18,6 +18,7 @@ void main() {
       final int charactersLength = JSStringGetLength(string);
       expect(String.fromCharCodes(Uint16List.view(characters.cast<Uint16>().asTypedList(charactersLength).buffer, 0, charactersLength)), '123');
     }
+
     check();
     check();
     JSStringRelease(string);

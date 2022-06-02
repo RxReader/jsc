@@ -285,7 +285,7 @@ class JSStaticFunction extends Struct {
   }
 
   static Pointer<JSStaticFunction> allocateArray(Iterable<JSStaticFunctionDelegate> delegates) {
-    final Pointer<JSStaticFunction> result = calloc.call(delegates.length + 1);// +1，不然会报错
+    final Pointer<JSStaticFunction> result = calloc.call(delegates.length + 1); // +1，不然会报错
     for (int i = 0; i < delegates.length; i++) {
       result[i]
         ..name = delegates.elementAt(i).name

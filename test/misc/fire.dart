@@ -1,12 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  setUp(() {
-  });
+  setUp(() {});
 
-  tearDown(() {
-  });
+  tearDown(() {});
 
-  test('花火阅读', () {
-  });
+  test('花火阅读', () {});
 }
