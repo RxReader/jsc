@@ -45,7 +45,8 @@ jobs:
           channel: 'stable'
       - run: flutter --version
       - run: flutter pub get
-      - run: |
+      - if: ${{ matrix.os != 'windows-latest' }}
+        run: |
           # flutter format --dry-run --set-exit-if-changed .
           find . -path "./.dart_tool" -prune -o -name "*.dart" -not -name "*.g.dart" -exec flutter format --line-length 200 --dry-run --set-exit-if-changed {} +
       - run: flutter pub publish --dry-run
