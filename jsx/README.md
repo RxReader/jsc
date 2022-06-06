@@ -5,7 +5,7 @@ Flutter plugin for jsc.
 ## Flutter
 
 ```dart
-import 'package:jsc/jsc.dart';
+import 'package:jsx/jsc.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
