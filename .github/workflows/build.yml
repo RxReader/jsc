@@ -17,18 +17,16 @@ jobs:
       - name: Run llvm/clang-format@shell
         run: |
           brew install clang-format
-      - name: jsx
-        run: |
+      - run: cd jsx/; clang-format -style=file -i ios/Classes/*.h ios/Classes/*.m --dry-run
+      - run: flutter --version
+      - run: cd jsx/; flutter pub get
+      - run: |
           cd jsx/
-          clang-format -style=file -i ios/Classes/*.h ios/Classes/*.m --dry-run
-          flutter --version
-          flutter pub get
           # flutter format --dry-run --set-exit-if-changed .
           find . -path "./.dart_tool" -prune -o -name "*.dart" -not -name "*.g.dart" -exec flutter format --line-length 200 --dry-run --set-exit-if-changed {} +
-          flutter pub publish --dry-run
-          flutter analyze lib example/lib
-          cd example/
-          flutter build ios --no-codesign
+      - run: cd jsx/; flutter pub publish --dry-run
+      - run: cd jsx/; flutter analyze lib example/lib
+      - run: cd jsx/example/; flutter build ios --no-codesign
 
   build_android:
     name: Build Android on ${{ matrix.os }}
@@ -46,16 +44,13 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-      - name: jsx
+      - run: flutter --version
+      - run: cd jsx/; flutter pub get
+      - if: ${{ matrix.os != 'windows-latest' }}
         run: |
           cd jsx/
-          flutter --version
-          flutter pub get
           # flutter format --dry-run --set-exit-if-changed .
-          if ( $env:RUNNER_OS != "Windows" ) {
-            find . -path "./.dart_tool" -prune -o -name "*.dart" -not -name "*.g.dart" -exec flutter format --line-length 200 --dry-run --set-exit-if-changed {} +
-          }
-          flutter pub publish --dry-run
-          flutter analyze lib example/lib
-          cd example
-          flutter build apk --debug
+          find . -path "./.dart_tool" -prune -o -name "*.dart" -not -name "*.g.dart" -exec flutter format --line-length 200 --dry-run --set-exit-if-changed {} +
+      - run: cd jsx/; flutter pub publish --dry-run
+      - run: cd jsx/; flutter analyze lib example/lib
+      - run: cd jsx/example/; flutter build apk --debug
