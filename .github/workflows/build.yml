@@ -52,7 +52,7 @@ jobs:
           flutter --version
           flutter pub get
           # flutter format --dry-run --set-exit-if-changed .
-          if [ "$RUNNER_OS" != "Windows" ]; then
+          if [ "$env:RUNNER_OS" != "Windows" ]; then
             find . -path "./.dart_tool" -prune -o -name "*.dart" -not -name "*.g.dart" -exec flutter format --line-length 200 --dry-run --set-exit-if-changed {} +
           fi
           flutter pub publish --dry-run
