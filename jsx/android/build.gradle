@@ -1,0 +1,59 @@
+group 'io.github.v7lin.jsx'
+version '0.0.1'
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.1.2'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        mavenCentral()
+
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 31
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        minSdkVersion 21
+
+        // library 混淆 -> 随 library 引用，自动添加到 apk 打包混淆
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    flavorDimensions 'vendor'
+
+    productFlavors {
+        vendor {
+            dimension 'vendor'
+
+            // library 混淆 -> 随 library 引用，自动添加到 apk 打包混淆
+            consumerProguardFiles 'consumer-vendor-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    // https://github.com/fast-development/android-js-runtimes
+    // org.webkit:android-jsc:r250230
+    vendorImplementation "com.github.fast-development.android-js-runtimes:fastdev-jsruntimes-jsc:0.1.9"
+//    // 2021-03-27
+//    vendorImplementation "com.github.fast-development.android-js-runtimes:fastdev-jsruntimes-quickjs:0.1.9"
+}

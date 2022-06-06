@@ -17,15 +17,18 @@ jobs:
       - name: Run llvm/clang-format@shell
         run: |
           brew install clang-format
-      - run: clang-format -style=file -i ios/Classes/*.h ios/Classes/*.m --dry-run
-      - run: flutter --version
-      - run: flutter pub get
-      - run: |
+      - name: jsx
+        run: |
+          cd jsx/
+          clang-format -style=file -i ios/Classes/*.h ios/Classes/*.m --dry-run
+          flutter --version
+          flutter pub get
           # flutter format --dry-run --set-exit-if-changed .
           find . -path "./.dart_tool" -prune -o -name "*.dart" -not -name "*.g.dart" -exec flutter format --line-length 200 --dry-run --set-exit-if-changed {} +
-      - run: flutter pub publish --dry-run
-      - run: flutter analyze lib example/lib
-      - run: cd example; flutter build ios --no-codesign
+          flutter pub publish --dry-run
+          flutter analyze lib example/lib
+          cd example/
+          flutter build ios --no-codesign
 
   build_android:
     name: Build Android on ${{ matrix.os }}
@@ -43,12 +46,16 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-      - run: flutter --version
-      - run: flutter pub get
-      - if: ${{ matrix.os != 'windows-latest' }}
+      - name: jsx
         run: |
+          cd jsx/
+          flutter --version
+          flutter pub get
           # flutter format --dry-run --set-exit-if-changed .
-          find . -path "./.dart_tool" -prune -o -name "*.dart" -not -name "*.g.dart" -exec flutter format --line-length 200 --dry-run --set-exit-if-changed {} +
-      - run: flutter pub publish --dry-run
-      - run: flutter analyze lib example/lib
-      - run: cd example; flutter build apk --debug
+          if [ "$RUNNER_OS" != "Windows" ]; then
+            find . -path "./.dart_tool" -prune -o -name "*.dart" -not -name "*.g.dart" -exec flutter format --line-length 200 --dry-run --set-exit-if-changed {} +
+          fi
+          flutter pub publish --dry-run
+          flutter analyze lib example/lib
+          cd example
+          flutter build apk --debug
