@@ -10,13 +10,13 @@ import 'package:jsx/src/core/js_object.dart';
 import 'package:jsx/src/core/js_value.dart';
 
 JSValueRef _console_log(
-    JSContextRef ctx,
-    JSObjectRef function,
-    JSObjectRef thisObject,
-    int argumentCount,
-    Pointer<JSValueRef> arguments,
-    Pointer<JSValueRef> exception,
-    ) {
+  JSContextRef ctx,
+  JSObjectRef function,
+  JSObjectRef thisObject,
+  int argumentCount,
+  Pointer<JSValueRef> arguments,
+  Pointer<JSValueRef> exception,
+) {
   return convertJSObjectCallAsFunctionCallback(
     ctx,
     function,
@@ -24,7 +24,7 @@ JSValueRef _console_log(
     argumentCount,
     arguments,
     exception,
-        (JSContext context, JSObject function, JSObject thisObject, List<JSValue> arguments, JSException exception) {
+    (JSContext context, JSObject function, JSObject thisObject, List<JSValue> arguments, JSException exception) {
       if (kDebugMode) {
         print('function: ${function.getProperty('name').string}');
         print('argumentCount: $argumentCount');
@@ -40,13 +40,13 @@ JSValueRef _console_log(
 }
 
 JSValueRef _set_timeout(
-    JSContextRef ctx,
-    JSObjectRef function,
-    JSObjectRef thisObject,
-    int argumentCount,
-    Pointer<JSValueRef> arguments,
-    Pointer<JSValueRef> exception,
-    ) {
+  JSContextRef ctx,
+  JSObjectRef function,
+  JSObjectRef thisObject,
+  int argumentCount,
+  Pointer<JSValueRef> arguments,
+  Pointer<JSValueRef> exception,
+) {
   return convertJSObjectCallAsFunctionCallback(
     ctx,
     function,
@@ -54,7 +54,7 @@ JSValueRef _set_timeout(
     argumentCount,
     arguments,
     exception,
-        (JSContext context, JSObject function, JSObject thisObject, List<JSValue> arguments, JSException exception) {
+    (JSContext context, JSObject function, JSObject thisObject, List<JSValue> arguments, JSException exception) {
       exception.invoke(JSObject.makeError(context, arguments: <JSValue>[
         JSValue.makeString(context, string: 'setTimeout not supported'),
       ]));
