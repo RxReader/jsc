@@ -4,10 +4,10 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'jsx'
-  s.version          = '0.0.1'
-  s.summary          = 'Flutter plugin for jsc.'
+  s.version          = '0.0.2'
+  s.summary          = 'JavaScriptCore for Flutter. The plugin provides the ability to evaluate JavaScript programs from within dart.'
   s.description      = <<-DESC
-Flutter plugin for jsc.
+JavaScriptCore for Flutter. The plugin provides the ability to evaluate JavaScript programs from within dart.
                        DESC
   s.homepage         = 'http://example.com'
   s.license          = { :file => '../LICENSE' }

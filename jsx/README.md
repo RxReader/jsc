@@ -1,6 +1,18 @@
 # jsx
 
-Flutter plugin for jsc.
+JavaScriptCore for Flutter. The plugin provides the ability to evaluate JavaScript programs from within dart.
+
+## Android
+
+```
+# do nothing
+```
+
+## iOS
+
+```
+# do nothing
+```
 
 ## Flutter
 

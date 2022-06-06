@@ -1,8 +1,8 @@
 name: jsx
-description: Flutter plugin for jsc.
-version: 0.0.1
+description: JavaScriptCore for Flutter. The plugin provides the ability to evaluate JavaScript programs from within dart.
+version: 0.0.2
 # author: v7lin <v7lin@qq.com>
-homepage: https://github.com/RxReader/jsc/jsx
+homepage: https://github.com/RxReader/jsc
 
 environment:
   sdk: ">=2.17.1 <3.0.0"
