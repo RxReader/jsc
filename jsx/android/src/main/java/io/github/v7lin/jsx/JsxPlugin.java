@@ -21,8 +21,8 @@ public class JsxPlugin implements FlutterPlugin, MethodCallHandler {
     // --- FlutterPlugin
 
     @Override
-    public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
-        channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "v7lin.github.io/jsx");
+    public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
+        channel = new MethodChannel(binding.getBinaryMessenger(), "v7lin.github.io/jsx");
         channel.setMethodCallHandler(this);
     }
 
