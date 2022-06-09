@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:jsx/src/bindings/js_base.dart';
 import 'package:jsx/src/bindings/js_object_ref.dart' as js_bd;
-import 'package:jsx/src/core/js_object.dart';
+import 'package:jsx/src/js_object.dart';
 
 @immutable
 class JSClass {

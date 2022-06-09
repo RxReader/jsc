@@ -1,5 +1,5 @@
-import 'package:jsx/src/core/js_context.dart';
-import 'package:jsx/src/core/js_value.dart';
+import 'package:jsx/src/js_context.dart';
+import 'package:jsx/src/js_value.dart';
 
 typedef JSModuleResolver = JSValue Function(JSContext context, List<String> path, String? version);
 

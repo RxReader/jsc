@@ -1,9 +1,9 @@
 import 'dart:ffi';
 
 import 'package:jsx/src/bindings/js_base.dart';
-import 'package:jsx/src/core/js_context.dart';
-import 'package:jsx/src/core/js_object.dart';
-import 'package:jsx/src/core/js_value.dart';
+import 'package:jsx/src/js_context.dart';
+import 'package:jsx/src/js_object.dart';
+import 'package:jsx/src/js_value.dart';
 import 'package:jsx/src/vm/js_inject.dart';
 
 // https://developer.mozilla.org/zh-CN/docs/Web/API/console

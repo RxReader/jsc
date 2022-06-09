@@ -1,6 +1,6 @@
-import 'package:jsx/src/core/js_context.dart';
-import 'package:jsx/src/core/js_object.dart';
-import 'package:jsx/src/core/js_value.dart';
+import 'package:jsx/src/js_context.dart';
+import 'package:jsx/src/js_object.dart';
+import 'package:jsx/src/js_value.dart';
 
 abstract class JSInject {
   const JSInject();

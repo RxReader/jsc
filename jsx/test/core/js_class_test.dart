@@ -4,11 +4,11 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:jsx/src/bindings/js_base.dart';
-import 'package:jsx/src/core/js_class.dart';
-import 'package:jsx/src/core/js_context.dart';
-import 'package:jsx/src/core/js_object.dart';
-import 'package:jsx/src/core/js_string.dart';
-import 'package:jsx/src/core/js_value.dart';
+import 'package:jsx/src/js_class.dart';
+import 'package:jsx/src/js_context.dart';
+import 'package:jsx/src/js_object.dart';
+import 'package:jsx/src/js_string.dart';
+import 'package:jsx/src/js_value.dart';
 
 JSValueRef _kXyz_getProperty(JSContextRef ctx, JSObjectRef object, JSStringRef propertyName, Pointer<JSValueRef> exception) {
   return convertJSObjectGetPropertyCallback(ctx, object, propertyName, exception, (JSContext context, JSObject object, JSString propertyName, JSException exception) {

@@ -1,4 +1,4 @@
-import 'package:jsx/src/core/js_context.dart';
+import 'package:jsx/src/js_context.dart';
 import 'package:jsx/src/vm/js_inject.dart';
 
 // 需提前注入 XMLHttpRequest

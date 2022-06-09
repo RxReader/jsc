@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:jsx/src/core/js_context.dart';
-import 'package:jsx/src/core/js_value.dart';
+import 'package:jsx/src/js_context.dart';
+import 'package:jsx/src/js_value.dart';
 import 'package:jsx/src/vm/js_vm.dart';
 
 void main() {

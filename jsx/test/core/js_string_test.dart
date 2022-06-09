@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:jsx/src/core/js_string.dart';
+import 'package:jsx/src/js_string.dart';
 
 void main() {
   assert(Platform.isMacOS);

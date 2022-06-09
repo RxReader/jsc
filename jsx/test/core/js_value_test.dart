@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:jsx/src/core/js_context.dart';
-import 'package:jsx/src/core/js_value.dart';
+import 'package:jsx/src/js_context.dart';
+import 'package:jsx/src/js_value.dart';
 
 void main() {
   assert(Platform.isMacOS);

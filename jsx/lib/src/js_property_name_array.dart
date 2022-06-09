@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:jsx/src/bindings/js_base.dart';
 import 'package:jsx/src/bindings/js_object_ref.dart' as js_bd;
-import 'package:jsx/src/core/js_string.dart';
+import 'package:jsx/src/js_string.dart';
 
 @immutable
 class JSPropertyNameArray {

@@ -4,11 +4,11 @@ import 'package:ffi/ffi.dart';
 import 'package:flutter/foundation.dart';
 import 'package:jsx/src/bindings/js_base.dart';
 import 'package:jsx/src/bindings/js_value_ref.dart' as js_bd;
-import 'package:jsx/src/core/js_class.dart';
-import 'package:jsx/src/core/js_context.dart';
-import 'package:jsx/src/core/js_error.dart';
-import 'package:jsx/src/core/js_object.dart';
-import 'package:jsx/src/core/js_string.dart';
+import 'package:jsx/src/js_class.dart';
+import 'package:jsx/src/js_context.dart';
+import 'package:jsx/src/js_error.dart';
+import 'package:jsx/src/js_object.dart';
+import 'package:jsx/src/js_string.dart';
 
 enum JSType {
   kJSTypeUndefined,
