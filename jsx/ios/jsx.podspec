@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'jsx'
-  s.version          = '0.0.2'
+  s.version          = '0.1.0'
   s.summary          = 'JavaScriptCore for Flutter. The plugin provides the ability to evaluate JavaScript programs from within dart.'
   s.description      = <<-DESC
 JavaScriptCore for Flutter. The plugin provides the ability to evaluate JavaScript programs from within dart.
