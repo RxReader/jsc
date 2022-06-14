@@ -137,7 +137,7 @@ void main() {
     final JSObject console = JSObject.make(globalContext, clazz: clazz);
     clazz.release();
     globalContext.globalObject.setProperty('console', console.value);
-    globalContext.evaluate('console.log("World");');
+    globalContext.evaluate('console.log("Hello World");');
     globalContext.release();
   });
   test('console.log - 2', () {

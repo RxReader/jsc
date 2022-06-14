@@ -1,9 +1,9 @@
 PODS:
   - Flutter (1.0.0)
-  - jsx (0.1.0):
+  - jsx (1.0.0):
     - Flutter
-    - jsx/vendor (= 0.1.0)
-  - jsx/vendor (0.1.0):
+    - jsx/vendor (= 1.0.0)
+  - jsx/vendor (1.0.0):
     - Flutter
 
 DEPENDENCIES:
@@ -18,7 +18,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
-  jsx: 8ccbde33e1e52ababef04969fb1a6090a0b41549
+  jsx: f360e75733b0cb8969bda03790bdb3e90bcc118f
 
 PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
 

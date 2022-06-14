@@ -1,5 +1,14 @@
+File pubspec = new File(project.projectDir.parentFile,  'pubspec.yaml')
+String yaml = pubspec.text
+// Using \s*['|"]?([^\n|'|"]*)['|"]? to extract version number.
+java.util.regex.Matcher versionMatcher = java.util.regex.Pattern.compile("^version:\\s*['|\"]?([^\\n|'|\"]*)['|\"]?\$", java.util.regex.Pattern.MULTILINE).matcher(yaml)
+versionMatcher.find()
+String library_version = versionMatcher.group(1).replaceAll("\\+", "-")
+
+// The Android Gradle Plugin builds the native code with the Android NDK.
+
 group 'io.github.v7lin.jsx'
-version '0.1.0'
+version library_version
 
 buildscript {
     repositories {
@@ -8,6 +17,7 @@ buildscript {
     }
 
     dependencies {
+        // The Android Gradle Plugin knows how to build native code with the NDK.
         classpath 'com.android.tools.build:gradle:7.1.2'
     }
 }
@@ -24,7 +34,13 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
+    // Bumping the plugin compileSdkVersion requires all clients of this plugin
+    // to bump the version in their app.
     compileSdkVersion 31
+
+    // Bumping the plugin ndkVersion requires all clients of this plugin to bump
+    // the version in their app and to download a newer version of the NDK.
+    ndkVersion "21.1.6352462"
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
